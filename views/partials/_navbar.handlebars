@@ -1,0 +1,55 @@
+{{!-- bootstrap navbar --}}
+<nav class="navbar navbar-dark bg-primary navbar-expand-lg mb-3">
+    <div class="container">
+        <a class="navbar-brand" href="/">MyBlog</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item ">
+
+                    <a class="nav-link" href="/">Home
+
+                    </a>
+                </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+               
+
+            </ul>
+
+            {{!-- right dropdown --}}
+            <ul class="navbar-nav ml-auto">
+                 {{#if user}}
+               
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbarDropdownMenuLink">Posts</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="/posts">See all posts</a>
+                        <a class="dropdown-item" href="posts/add">Add a new post</a>
+
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/users/logout">Logout</a>
+                </li>
+                {{else}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/users/register">Register</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="/users/login">Login</a>
+                </li>
+
+                {{/if}}
+            </ul>
+            {{!-- dropdown ends --}}
+        </div>
+
+    </div>
+</nav>
+{{!-- end of navbar --}}

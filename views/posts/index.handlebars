@@ -1,0 +1,28 @@
+{{#each posts}}
+
+<div class="card mb-3">
+    <div class="card-header">
+        <h3> {{title}}</h3>
+    </div>
+    <div class="card-body">
+
+        <p class="card-text">{{contents}}</p>
+        <a href="/posts/edit/{{id}}" class="btn btn-primary">Edit</a>
+        <form action="/posts/delete/{{id}}?_method=DELETE" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <button class="btn btn-primary mt-2" type="submit">Delete</button>
+        </form>
+    </div>
+</div>
+{{else}}
+
+
+
+<div class="alert alert-info alert-dismissible fade show" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    Sorry couln't find any post to list here...
+</div>
+
+{{/each}}
